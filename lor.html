@@ -1,0 +1,40 @@
+<html ng-app="">
+<head>
+<title>LOR</title>
+<script src="jquery.js"></script>
+<script src="angular.min.js"></script>
+<script src="main.js"></script>
+<script src="search.js"></script>
+<link href="bstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://apis.google.com/js/plus.js?onload=init"></script>
+<script src="https://apis.google.com/js/platform.js"></script>
+
+</head>
+<body>
+<p>Enter an artist or song!
+</p>
+<form name="inout_form">
+<input type="text" ng-model="singername">
+<button type="submit"">Listen!</button>
+{{singername}}
+</form>
+<button id="execute-request-button">Authorize</button>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<!-- <script src="https://apis.google.com/js/api.js" 
+        onload="this.onload=function(){};handleClientLoad()" 
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+
+<script src="bstrap/js/bootstrap.min.js"></script>
+
+<!-- <p>{{singername}}</p> -->
+</body>
+</html>
+
+
+
