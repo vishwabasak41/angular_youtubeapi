@@ -1,3 +1,8 @@
+function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+
+
+
+
 $(function(){
 	$('form').on('submit',function(p){
 		p.preventDefault();
@@ -5,7 +10,7 @@ $(function(){
 		var request=gapi.client.youtube.search.list({
 
 			'part': 'snippet',
-            'q': 'sonu nigam',
+            'q': encodeURIComponent($('#song_value').val().replace('/%20/g','+')),
             'type': 'video',
             'maxResults':20,
             'order':'viewCount'
@@ -18,6 +23,12 @@ $(function(){
 
 		request.execute(function(response){
 			console.log(response)
+			var result=response.result;
+			$each(result.items,function(index,item){
+				$.get("tpl/lor.html",function(data){
+					$('#result').append(tplawesome(data, [{"title":item.snippet.thumbnails.title,"videoid":item.Object[0].id.videoId}]));
+				})
+			})
 		})
 	})
 
