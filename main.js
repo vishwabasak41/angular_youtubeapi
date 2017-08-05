@@ -29,10 +29,9 @@ $(function(){
 			$.each(response.items,function(index,item){
 				$.get("lor.html",function(data){
 
-					for(i=0;i<=5;i++){
+					
 					$('#result').append(tplawesome(data, [{"title":response.items["1"].snippet.title,"videoid":response.items["1"].id.videoId}]));
-				}
-
+		
 				})
 			})
 		})
@@ -51,7 +50,6 @@ function init(){
 
 	})
 }
-
 
 
 
