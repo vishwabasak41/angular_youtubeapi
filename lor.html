@@ -2,9 +2,9 @@
 <head>
 <title>LOR</title>
 <script src="jquery.js"></script>
-<script src="angular.min.js"></script>
+<!-- <script src="angular.min.js"></script> -->
 <script src="main.js"></script>
-<script src="search.js"></script>
+<!-- <script src="search.js"></script> -->
 <link href="bstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://apis.google.com/js/plus.js?onload=init"></script>
 <script src="https://apis.google.com/js/platform.js"></script>
@@ -15,10 +15,10 @@
 <p>Enter an artist or song!
 </p>
 <form name="inout_form">
-<input type="text" ng-model="singername" id="song_value">
+<input type="text"  id="song_value"><!-- ng-model="singername"  -->
 <button type="submit" id="go">Listen!</button>
-{{singername}}
-</form>
+<!-- {{singername}}
+ --></form>
 <button id="execute-request-button">Authorize</button>
 </div>
 
@@ -30,15 +30,13 @@
 
 
 <div id="section2" >
-<div id="song_list">
+<div id="result">
 <h2>{{title}}</h2>
 <iframe width="420" height="315" src="https://www.youtube.com/embed/{{videoid}}" frameborder="1" allowfullscreen>
 </iframe>
 
 
-<div id="result">
 
-</div>
 </div>
 
 </div>
